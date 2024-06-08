@@ -798,7 +798,9 @@ legend,
   display: block;
   width: 24px;
   height: 24px;
-  background: url("../images/ico_close.svg") no-repeat;
+}
+.header-sub .checklist-close{
+  background-color: #fff;
 }
 .btn-edit {
   width: 24px;
@@ -919,6 +921,19 @@ legend,
   font-weight: 500;
   padding-right: 1.2rem;
   background: url("../images/ico_more.svg") no-repeat 100% center / 6px;
+}
+.card-title{
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 10px;
+margin-left: 14px;
+}
+.card-age{
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 5px;
+  margin-left: 14px;
+  color: #666;
 }
 .recent-document {
   display: flex;
@@ -1088,14 +1103,29 @@ legend,
 .btn-ticket-buy {
   display: flex;
   justify-content: space-between;
-  background: var(--navy00);
+  background: var(--pinkdf);
   padding: 1.4rem 2.0rem;
   border-radius: 1.0rem;
+  min-height: 60px;
 }
 .btn-ticket-buy strong {
   color: var(--white);
   font-size: 1.4rem;
   font-weight: 700;
+  &.ico1 {
+    position: relative;
+    padding-left: 31px;
+    &:before {
+      position: absolute;
+      top: -3px;
+      left: 0;
+      display: block;
+      content: "";
+      width: 25px;
+      height: 25px;
+      background: url(../images/ico_check2.svg) no-repeat 0 0 / contain;
+    }
+  }
 }
 .btn-ticket-buy span {
   color: var(--gray9f);
@@ -1468,72 +1498,43 @@ button {
   text-align: center;
 }
 
+
+/* 공지 */
+.notification{
+  width: 100%;
+  height: 38px;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 78px;
+  z-index: 100;
+}
+.notification .strong{
+  margin-right: 6px;
+}
+.notification p{
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+
 /* 푸터 네비 */
 .nav-foot {
   position: relative;
   width: 100%;
 }
-.nav-foot.fix-bottom {
+ .nav-foot__cont.fix-bottom {
   height: 20.0rem !important;
 }
-.nav-foot .btn-select {
-  display: block;
-  width: 86px;
-  height: 86px;
-  border-radius: 100%;
-  background: var(--blue00) url("../images/ico_car.svg") no-repeat center center;
-  position: fixed;
-  z-index: 301;
-  bottom: 4.1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 .2004rem 2.3749rem 0 rgba(0, 0, 0, 0.3);
-}
-.nav-foot .btn-select.active {
-  background: var(--white) url("../images/ico_close_foot.svg") no-repeat center center;
-}
-.nav-foot__layer {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.7);
-  width: 100%;
-  height: 100%;
-}
-.nav-foot__layer.active {
-  display: block;
-}
-
-.nav-foot__mode {
-  width: calc(100% - 3.2rem);
-  max-width: 324px;
-  height: 12.0rem;
-  display: flex;
-  flex-direction: column;
-  gap: .8rem;
-  position: absolute;
-  bottom: 14.7rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.nav-foot__mode a {
-  display: block;
-  background: var(--blue00);
-  color: var(--white);
-  width: 100%;
-  padding: 2.0rem 2.0rem;
-  border-radius: 1.0rem;
-  text-align: center;
-  font-size: 1.6rem;
-}
-
 .nav-foot__cont {
   width: 100%;
   max-width: 500px;
-  height: 110px;
-  background: url("../images/bg_nav_foot.png") no-repeat center center / cover;
+  height: 78px;
+  background: #fff;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.15);
+  /* background: url("../images/bg_nav_foot.png") no-repeat center center / cover; */
   position: fixed;
   z-index: 300;
   bottom: 0;
@@ -1541,46 +1542,40 @@ button {
   transform: translateX(-50%);
 }
 .nav-foot__cont ul {
-  height: 100%;
-  height: 110px;
+  width: 100%;
+  height: 78px;
   padding: 0 2.0rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .nav-foot__cont ul li {
-  width: 500px;
-  height: 38px;
+  width: 100%;
+  height: 42px;
+  align-items: center;
 }
 .nav-foot__cont ul li.ico-main {
-  background: url("../images/ico_home.svg") no-repeat center 0 / 24px;
+  background: url("../images/ico_note.svg") no-repeat center 0 / 24px;
 }
 .nav-foot__cont ul li.ico-main.active a {
-  background: url("../images/ico_home_on.svg") no-repeat center 0 / 24px;
-  color: var(--blue00);
+  background: url("../images/ico_note_active.svg") no-repeat center 0 / 24px;
+  color: #DF1486;
 }
-.nav-foot__cont ul li.ico-board {
-  background: url("../images/ico_washcar.svg") no-repeat center 0 / 24px;
-  margin-right: 60px;
+.nav-foot__cont ul li.ico-dictionary {
+  background: url("../images/ico_dictionary.svg") no-repeat center 0 / 24px;
 }
-.nav-foot__cont ul li.ico-board.active a {
-  background: url("../images/ico_washcar_on.svg") no-repeat center 0 / 24px;
-  color: var(--blue00);
+.nav-foot__cont ul li.nav-logo {
+  background: url("../images/irene_logo.svg") no-repeat center;
 }
-.nav-foot__cont ul li.ico-doc {
-  background: url("../images/ico_around.svg") no-repeat center 0 / 24px;
-  margin-left: 60px;
+.nav-foot__cont ul li.ico-lego {
+  background: url("../images/ico_lego.svg") no-repeat center 0 / 24px;
 }
-.nav-foot__cont ul li.ico-doc.active a {
-  background: url("../images/ico_around_on.svg") no-repeat center 0 / 24px;
-  color: var(--blue00);
+.nav-foot__cont ul li.ico-lego.active a {
+  background: url("../images/ico_lego_active.svg") no-repeat center 0 / 24px;
+  color: #DF1486;
 }
-.nav-foot__cont ul li.ico-mypage {
-  background: url("../images/ico_moreview.svg") no-repeat center 0 / 24px;
-}
-.nav-foot__cont ul li.ico-mypage.active a {
-  background: url("../images/ico_moreview_on.svg") no-repeat center 0 / 24px;
-  color: var(--blue00);
+.nav-foot__cont ul li.ico-chat {
+  background: url("../images/ico_chat.svg") no-repeat center 0 / 24px;
 }
 
 .nav-foot__cont ul li a {
@@ -1593,20 +1588,7 @@ button {
   text-align: center;
   white-space: nowrap;
 }
-.layer {
-  display: none;
-  /* display: block; */
-  position: fixed;
-  z-index: 350;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-}
-.layer.active {
-  display: block;
-}
+
 .dialog {
   position: fixed;
   top: 0;
@@ -4476,10 +4458,10 @@ input[type="number"]::-webkit-inner-spin-button {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.nav-foot .btn-select.writing {
+/* .nav-foot .btn-select.writing {
 
   background: var(--blue00) url("../images/ico_writing.svg") no-repeat center left calc(50% + 4px) / 50%;
-}
+} */
 .writing-explanation {
   display: none; 
   width: calc(100% - 3.2rem);
@@ -4514,7 +4496,7 @@ input[type="number"]::-webkit-inner-spin-button {
   background: var(--blue00) !important;
   color: var(--white);
 }
- 
+
 .card-main {
   position: relative;
   display: block;
@@ -4596,6 +4578,39 @@ input[type="number"]::-webkit-inner-spin-button {
     grid-template-columns: minmax(87px, auto) 1fr;
     gap: 4rem;
   }
+}
+
+.dailylog{
+  color: var(--black);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.dailylog-calendar{
+  width: 100%;
+  padding: 30px 0;
+}
+.dailylog-details{
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.10);
+}
+.checklist{
+  width: 100%;
+  margin-top: 24px;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.10);
+  border-radius: 15px;
+}
+
+.program{
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+.img-wrap img{
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.10);
 }
 
 .vehicle-management {
@@ -4795,7 +4810,7 @@ input[type="number"]::-webkit-inner-spin-button {
   box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.10);
 }
 .scroll-x {
-  overflow: auto;
+  overflow-x: auto;
 }
 .scroll-none {
   overflow: visible;
