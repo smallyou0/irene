@@ -778,12 +778,12 @@ legend,
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  padding: .9rem 1.8rem;
+  padding: 4rem 1.8rem .9rem 1.8rem;
   background: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 54px;
+  /* height: 54px; */
   &.border-bottom {
     border-bottom: 1px solid var(--grayeb);
   }
@@ -810,7 +810,7 @@ legend,
 
 /* 메인 */
 .main {
-  padding-top: 5.4rem;
+  padding-top: 9.4rem;
 }
 .main {
   &.pt20 {
