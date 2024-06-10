@@ -4815,3 +4815,10 @@ input[type="number"]::-webkit-inner-spin-button {
 .scroll-none {
   overflow: visible;
 }
+.img-irene {
+  display: block;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  width: 120px;
+  height: 94px;
+}
